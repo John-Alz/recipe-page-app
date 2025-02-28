@@ -12,3 +12,7 @@
   --font-playFair: "Playfair Display", serif;
   --font-Outfit: "Outfit", serif;
 }
+
+body {
+  background: #0E1325;
+}
