@@ -4,18 +4,17 @@ import { useEffect } from "react";
 
 export const useFetch = (url) => {
 
-    const [state, dispatch] = useContext(RecipeContext);
+
+    const [, dispatch] = useContext(RecipeContext);
 
     const fecthData = async () => {
         try {
 
             const resp = await fetch(url);
-
             const data = await resp.json();
-            // console.log(data.categories);
             dispatch({
-                type: "SET-categories",
-                payload: data.categories
+                type: data.categories ? "SET-categories" : "SET-meals",
+                payload: data.categories || data.meals
             });
 
         } catch (error) {
