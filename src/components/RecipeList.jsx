@@ -8,17 +8,18 @@ export const RecipeList = () => {
 
     const [state] = useContext(RecipeContext);
 
-    const { meals } = state;
+    const { meals, meal } = state;
 
     useFetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=italian");
 
-    console.log(meals);
-
+    //Chequear validacion
 
     return (
         <div className='grid grid-cols-3 gap-5 mt-5 '>
             {
-                meals.map((item) => (
+                meal.length > 0 && meal.length < 2 ? meal.map((item) => (
+                    <RecipeCard key={item.idMeal} name={item.strMeal} img={item.strMealThumb} />
+                )) : meals.map((item) => (
                     <RecipeCard key={item.idMeal} name={item.strMeal} img={item.strMealThumb} />
                 ))
             }

@@ -6,12 +6,12 @@ import { FilterSort } from '../components/FilterSort'
 
 export default function HomePage() {
     return (
-        <div className='flex gap-8'>
+        <div className='flex gap-8 pt-8'>
             <div>
                 <Categories />
             </div>
             <div className='w-full'>
-                <div className='flex justify-between'>
+                <div className='flex justify-between mb-12'>
                     <Search />
                     <FilterSort />
                 </div>

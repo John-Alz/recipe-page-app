@@ -6,7 +6,8 @@ import { RecipeReducer } from '../reducers/RecipeReducer'
 const initialState = {
     word: "",
     categories: [],
-    meals: []
+    meals: [],
+    meal: []
 }
 
 export const RecipeProvider = ({ children }) => {
