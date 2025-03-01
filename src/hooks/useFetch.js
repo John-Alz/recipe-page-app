@@ -19,7 +19,7 @@ export const useFetch = (url, word) => {
                 });
             } else if (data.meals.length === 1) {
                 dispatch({
-                    type: "SET-meal",
+                    type: "SET-mealDetail",
                     payload: data.meals
                 });
             } else if (data.meals) {

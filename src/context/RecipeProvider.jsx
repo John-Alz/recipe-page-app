@@ -7,7 +7,7 @@ const initialState = {
     word: "",
     categories: [],
     meals: [],
-    meal: []
+    mealDetail: []
 }
 
 export const RecipeProvider = ({ children }) => {

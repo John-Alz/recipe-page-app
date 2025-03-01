@@ -3,6 +3,7 @@ import { useFetch } from '../hooks/useFetch'
 import { useContext } from 'react';
 import { RecipeContext } from '../context/RecipeContext';
 import { RecipeCard } from './RecipeCard'
+import { Link } from 'react-router-dom';
 
 export const RecipeList = () => {
 
@@ -14,13 +15,16 @@ export const RecipeList = () => {
 
     //Chequear validacion
 
+    console.log(state);
+
+
     return (
         <div className='grid grid-cols-3 gap-5 mt-5 '>
             {
-                meal.length > 0 && meal.length < 2 ? meal.map((item) => (
-                    <RecipeCard key={item.idMeal} name={item.strMeal} img={item.strMealThumb} />
-                )) : meals.map((item) => (
-                    <RecipeCard key={item.idMeal} name={item.strMeal} img={item.strMealThumb} />
+                meals.map((item) => (
+                    <Link key={item.idMeal} to={`/detail/${item.idMeal}`}>
+                        <RecipeCard name={item.strMeal} img={item.strMealThumb} />
+                    </Link>
                 ))
             }
         </div>
