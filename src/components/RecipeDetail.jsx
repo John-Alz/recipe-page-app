@@ -3,9 +3,12 @@ import { useFetch } from '../hooks'
 import { useContext } from 'react'
 import { RecipeContext } from '../context/RecipeContext'
 import { Link, useParams } from 'react-router-dom'
+import { useState } from 'react'
 
 
 export const RecipeDetail = () => {
+
+    // const [ingredients, setIngredients] = useState([]);
 
     const params = useParams();
 
@@ -26,10 +29,8 @@ export const RecipeDetail = () => {
             let cant = mealDetail[i][measureKey]?.trim();
 
             if (name) {
-                ingredients.push({
-                    name: name,
-                    cant: cant || ""
-                });
+                // setIngredients([...ingredients, { name: name, cant: cant || "" }])
+                ingredients.push({ name: name, cant: cant || "" });
             }
         }
     }
@@ -56,7 +57,7 @@ export const RecipeDetail = () => {
                     </div>
                     <ul className='list-disc ml-5'>
                         {
-                            ingredients.map((ingredient) => (
+                            ingredients && ingredients.map((ingredient) => (
                                 <li>{ingredient.cant} {ingredient.name}</li>
                             ))
                         }

@@ -10,6 +10,8 @@ export const RecipeReducer = (state, action) => {
             return { ...state, mealDetail: action.payload }
         case "SET-word":
             return { ...state, word: action.payload }
+        case "SET-nameCategory":
+            return { ...state, categoryName: action.payload }
         default:
             return state;
     }

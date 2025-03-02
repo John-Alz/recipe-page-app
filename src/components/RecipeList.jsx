@@ -9,11 +9,9 @@ export const RecipeList = () => {
 
     const [state] = useContext(RecipeContext);
 
-    const { meals, meal } = state;
+    const { meals, categoryName } = state;
 
-    useFetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=italian");
-
-    //Chequear validacion
+    useFetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
 
     console.log(state);
 

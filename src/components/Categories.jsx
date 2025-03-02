@@ -15,7 +15,6 @@ export const Categories = () => {
     // console.log(categories);
 
 
-
     return (
         <div className='w-[260px] flex flex-col gap-8'>
             <h2 className='text-3xl text-font font-playFair'>Categories</h2>
